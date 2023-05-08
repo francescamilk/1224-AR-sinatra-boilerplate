@@ -1,1 +1,17 @@
-<h1>Hello WWWorld!</h1>
+<h1>All Restaurants</h1>
+
+<ul>
+<% @restaurants.each do |restaurant| %>
+    <li>
+        ## Starting from *index*
+        # take the restaurant.id to pass it to the URL
+        # ie. 'localhost:4567/restaurants/1'
+        # so it can be retrieved from *show* controller
+        # ('localhost:4567/restaurants/*:id*')
+        # to find the restaurant you want to visit
+        <a href="/restaurants/<%= restaurant.id %>">
+            <%= "#{restaurant.name} #{'*' * restaurant.rating}" %>
+        </a>
+    </li>
+<% end %>
+</ul>
